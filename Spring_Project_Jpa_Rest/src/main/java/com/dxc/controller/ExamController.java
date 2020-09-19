@@ -17,7 +17,7 @@ public class ExamController {
 	@Autowired
 	ExamRepository examRepository;
 	
-	@GetMapping("/exams")
+	@GetMapping("exams")
 	public List<Exam> getExams()
 	{
 		List<Exam> exams = (List<Exam>) examRepository.findAll();
@@ -31,7 +31,7 @@ public class ExamController {
 		return exam;
 	}	
 	
-	@PostMapping("/exam")
+	@PostMapping("exam")
 	public Exam save(Exam exam)
 	{
 		return examRepository.save(exam);
