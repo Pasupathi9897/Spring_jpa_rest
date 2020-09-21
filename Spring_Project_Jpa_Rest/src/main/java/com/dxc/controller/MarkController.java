@@ -26,10 +26,10 @@ public class MarkController {
 		return marks;
 	}
 	
-	@GetMapping(path="mark/{id}")
-	public Mark getMark(@PathVariable("id") String id) 
+	@GetMapping(path="mark/{examid}")
+	public List<Mark> getMark(@PathVariable("examid") Iterable<String> id) 
 	{
-		Mark mark = markRespository.findById(id).orElse(new Mark());
+		List<Mark> mark = (List<Mark>) markRespository.findAllById(id);
 		return mark;
 	}
 	
